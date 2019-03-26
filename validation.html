@@ -1,0 +1,13 @@
+<form>
+<input type=”text” name=”txt1” [(ngModel)]=”t1” required minlength=”5” #tx1=”ngModel”>
+<br>
+<span *ngIf=”tx1.errors && tx1.touched && tx1.errors.required”>Enter User Name</span>
+<span *ngIf=”tx1.errors && tx1.errors.minlength”>Enter min 5 Characters</span>
+<br>
+<input type=”text” name=”txt2” [(ngModel)]=”t2” required #tx2=”ngModel”>
+<br>
+<span *ngIf=”tx2.errors && tx2.touched && tx2.errors.required”>Enter Password</span>
+<br>
+<input type=”button” value=”Submit” name=”bt1” *ngIf=”tx1.valid && tx2.valid”>
+<input type=”submit” value=”Click” *ngIf=”tx1.valid && tx2.valid”>
+</form>
